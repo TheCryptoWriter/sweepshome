@@ -1,295 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Casino Review Site</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        background-color: #181818;
-        /* Dark background */
-        color: #e0e0e0;
-        /* Light text color */
-        line-height: 1.6;
-        margin: 0;
-      }
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #181818;
+            /* Dark background */
+            color: #e0e0e0;
+            /* Light text color */
+            line-height: 1.6;
+            margin: 0;
+        }
 
-      .uk-navbar-container {
-        background-color: #282828;
-        /* Darker navbar background */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-      }
+        .uk-navbar-container {
+            background-color: #282828;
+            /* Darker navbar background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-      .uk-navbar-item,
-      .uk-navbar-nav > li > a {
-        color: #f0f0f0;
-        /* Lighter navigation text */
-        font-weight: 500;
-      }
+        .uk-navbar-item,
+        .uk-navbar-nav>li>a {
+            color: #f0f0f0;
+            /* Lighter navigation text */
+            font-weight: 500;
+        }
 
-      .uk-navbar-nav > li > a:hover {
-        color: #ffcc00;
-        /* Gold hover color */
-      }
+        .uk-navbar-nav>li>a:hover {
+            color: #ffcc00;
+            /* Gold hover color */
+        }
 
-      .uk-heading-large {
-        color: #ffcc00;
-        /* Gold heading color */
-        font-weight: 700;
-      }
+        .uk-heading-large {
+            color: #ffcc00;
+            /* Gold heading color */
+            font-weight: 700;
+        }
 
-      .uk-heading-medium {
-        color: #ffcc00;
-        /* Gold heading color */
-        font-weight: 600;
-      }
+        .uk-heading-medium {
+            color: #ffcc00;
+            /* Gold heading color */
+            font-weight: 600;
+        }
 
-      .uk-link {
-        color: #00ccff;
-        /* Blue link color */
-        text-decoration: none;
-      }
+        .uk-link {
+            color: #00ccff;
+            /* Blue link color */
+            text-decoration: none;
+        }
 
-      .uk-link:hover {
-        text-decoration: underline;
-      }
+        .uk-link:hover {
+            text-decoration: underline;
+        }
 
-      #hero {
-        background-color: #333;
-        /* Dark hero background */
-        color: #fff;
-        padding: 100px 0;
-        text-align: center;
-      }
+        #hero {
+            background-color: #333;
+            /* Dark hero background */
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
 
-      .uk-section-xsmall {
-        padding: 50px 0;
-      }
+        .uk-section-xsmall {
+            padding: 50px 0;
+        }
 
-      .uk-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+        .uk-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-      /* Card style for casino listings */
-      .casino-card {
-        background-color: #282828;
-        border-radius: 5px;
-        padding: 20px;
-        margin-bottom: 20px;
-        transition: transform 0.2s ease;
-        color: #e0e0e0;
-        /* Light text color for card content */
-      }
+        /* Card style for casino listings */
+        .casino-card {
+            background-color: #282828;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+            color: #e0e0e0;
+            /* Light text color for card content */
+        }
 
-      .casino-card:hover {
-        transform: translateY(-5px);
-      }
+        .casino-card:hover {
+            transform: translateY(-5px);
+        }
 
-      .casino-card .uk-heading-small {
-        color: #ffcc00;
-        /* Gold heading color for card title */
-        margin-bottom: 10px;
-      }
+        .casino-card .uk-heading-small {
+            color: #ffcc00;
+            /* Gold heading color for card title */
+            margin-bottom: 10px;
+        }
 
-      .safety-index {
-        font-size: 0.8em;
-        margin-top: 10px;
-      }
+        .safety-index {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <div class="justify-content-center">
-            <a class="navbar-brand" href="#">Your Casino Review Site</a>
-            <br />
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#bonus-tracker">Bonus Tracker</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#tips-strategies"
-                  >Tips & Strategies</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#news">News</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#new-casinos">New Casinos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#new-slots">New Slots</a>
-              </li>
-            </ul>
-          </div>
-          <div class="" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <form class="d-flex">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid mx-5">
+                <a class="navbar-brand col-2" href="#">
+                    <img src="logo-placeholder.png" alt="Logo" width="120" height="50">
+                </a>
+                <div class="col-6 text-center align-items-center">
+                    <a class="navbar-brand" href="#">Your Casino Review Site</a>
+                    <hr>
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#bonus-tracker">Bonus Tracker</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tips-strategies">Tips & Strategies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#news">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#new-casinos">New Casinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#new-slots">New Slots</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="col-2">
+                    <input class=" form-control" type="search" placeholder="Search" aria-label="Search">
                 </form>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <div class="navbar-expand-lg">
-            <br />
-            <hr />
-          </div>
-        </div>
-      </nav>
+            </div>
+        </nav>
+
     </header>
 
     <main>
-      <section id="hero" class="uk-section uk-section-large uk-text-center">
-        <h1 class="uk-heading-large">Welcome to Your Casino Review Site</h1>
-        <p class="uk-text-lead">
-          Your one-stop shop for casino reviews, bonuses, and the latest
-          industry news.
-        </p>
-      </section>
-
-      <section id="bonus-tracker" class="uk-section-xsmall">
-        <div class="uk-container">
-          <div class="uk-card">
-            <h2 class="uk-heading-medium">Bonus Tracker</h2>
-            <p>
-              Find the best casino bonuses and track your wagering progress.
+        <section id="hero" class="uk-section uk-section-large uk-text-center">
+            <h1 class="uk-heading-large">Welcome to Your Casino Review Site</h1>
+            <p class="uk-text-lead">
+                Your one-stop shop for casino reviews, bonuses, and the latest
+                industry news.
             </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="tips-strategies" class="uk-section-xsmall">
-        <div class="uk-container">
-          <div class="uk-card">
-            <h2 class="uk-heading-medium">Tips and Strategies</h2>
-            <p>
-              Learn how to improve your odds and maximize your winnings with our
-              expert guides.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section id="bonus-tracker" class="uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-card">
+                    <h2 class="uk-heading-medium">Bonus Tracker</h2>
+                    <p>
+                        Find the best casino bonuses and track your wagering progress.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-      <section id="news" class="uk-section-xsmall">
-        <div class="uk-container">
-          <div class="uk-card">
-            <h2 class="uk-heading-medium">News</h2>
-            <p>
-              Stay up-to-date on the latest casino news and industry trends.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section id="tips-strategies" class="uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-card">
+                    <h2 class="uk-heading-medium">Tips and Strategies</h2>
+                    <p>
+                        Learn how to improve your odds and maximize your winnings with our
+                        expert guides.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-      <section id="new-casinos" class="uk-section-xsmall">
-        <div class="uk-container">
-          <div class="uk-card">
-            <h2 class="uk-heading-medium">New Casinos</h2>
-            <p>
-              Discover the newest online casinos and claim exclusive welcome
-              bonuses.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section id="news" class="uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-card">
+                    <h2 class="uk-heading-medium">News</h2>
+                    <p>
+                        Stay up-to-date on the latest casino news and industry trends.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-      <section id="new-slots" class="uk-section-xsmall">
-        <div class="uk-container">
-          <div class="uk-card">
-            <h2 class="uk-heading-medium">New Slots</h2>
-            <p>
-              Explore the latest and greatest slot games from top providers.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="casino-review-outline" class="uk-section-xsmall">
-        <div class="uk-container">
-          <h2 class="uk-heading-medium">Top Rated Casinos</h2>
-          <p>Here's today's top casinos:</p>
+        <section id="new-casinos" class="uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-card">
+                    <h2 class="uk-heading-medium">New Casinos</h2>
+                    <p>
+                        Discover the newest online casinos and claim exclusive welcome
+                        bonuses.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-          <div class="casino-card">
-            <h3 class="uk-heading-small">Spinfinity Casino</h3>
-            <div class="safety-index">SAFETY INDEX: HIGH</div>
-            <a href="#" class="uk-link">Expert review</a>
-          </div>
+        <section id="new-slots" class="uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-card">
+                    <h2 class="uk-heading-medium">New Slots</h2>
+                    <p>
+                        Explore the latest and greatest slot games from top providers.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="casino-review-outline" class="uk-section-xsmall">
+            <div class="uk-container">
+                <h2 class="uk-heading-medium">Top Rated Casinos</h2>
+                <p>Here's today's top casinos:</p>
 
-          <div class="casino-card">
-            <h3 class="uk-heading-small">Drake Casino</h3>
-            <div class="safety-index">SAFETY INDEX: VERY HIGH</div>
-            <a href="#" class="uk-link">Expert review</a>
-          </div>
-        </div>
-      </section>
-      <section id="casino-review-outline" class="uk-section-xsmall">
-        <div class="uk-container">
-          <div class="uk-card">
-            <h2 class="uk-heading-medium">Casino Review Outline</h2>
-            <p>Here's how we review casinos:</p>
-            <ol class="uk-list uk-list-decimal">
-              <li>
-                <h3>Overview</h3>
-                <ul class="uk-list uk-list-disc">
-                  <li>Review Rating</li>
-                  <li>Summary</li>
-                  <li>Mobile Compatibility</li>
-                  <li>Exclusive Features</li>
-                </ul>
-              </li>
-              <li>
-                <h3>Bonuses & Promotions</h3>
-                <ul class="uk-list uk-list-disc">
-                  <li>Welcome Bonus</li>
-                  <li>Signup Bonus</li>
-                  <li>Promotions</li>
-                  <li>Loyalty Rewards Program</li>
-                  <li>Competitions & Sweepstakes</li>
-                  <li>Packages</li>
-                </ul>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
+                <div class="casino-card">
+                    <h3 class="uk-heading-small">Spinfinity Casino</h3>
+                    <div class="safety-index">SAFETY INDEX: HIGH</div>
+                    <a href="#" class="uk-link">Expert review</a>
+                </div>
+
+                <div class="casino-card">
+                    <h3 class="uk-heading-small">Drake Casino</h3>
+                    <div class="safety-index">SAFETY INDEX: VERY HIGH</div>
+                    <a href="#" class="uk-link">Expert review</a>
+                </div>
+            </div>
+        </section>
+        <section id="casino-review-outline" class="uk-section-xsmall">
+            <div class="uk-container">
+                <div class="uk-card">
+                    <h2 class="uk-heading-medium">Casino Review Outline</h2>
+                    <p>Here's how we review casinos:</p>
+                    <ol class="uk-list uk-list-decimal">
+                        <li>
+                            <h3>Overview</h3>
+                            <ul class="uk-list uk-list-disc">
+                                <li>Review Rating</li>
+                                <li>Summary</li>
+                                <li>Mobile Compatibility</li>
+                                <li>Exclusive Features</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Bonuses & Promotions</h3>
+                            <ul class="uk-list uk-list-disc">
+                                <li>Welcome Bonus</li>
+                                <li>Signup Bonus</li>
+                                <li>Promotions</li>
+                                <li>Loyalty Rewards Program</li>
+                                <li>Competitions & Sweepstakes</li>
+                                <li>Packages</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="uk-section uk-section-xsmall uk-text-center">
-      <div class="uk-container">
-        <p>&copy; 2023 Your Casino Review Site</p>
-      </div>
+        <div class="uk-container">
+            <p>&copy; 2023 Your Casino Review Site</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
-  </body>
+</body>
+
 </html>
